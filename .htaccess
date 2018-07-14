@@ -1,0 +1,5 @@
+<LIMIT GET>
+order deny,allow
+deny from all
+allow from 133.27.0.0/16
+</LIMIT>

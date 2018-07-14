@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>Iniesta - Quiz</title>
+  <!--
+
+  Template 2085 Neuron
+
+  http://www.tooplate.com/view/2085-neuron
+
+-->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<script src="/jquery/js/jquery.js"></script>
+<script src="animation1.js"></script>
+<!-- <script src="animation1.js"></script> -->
+
+
+<!-- Main css -->
+<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css?family=Lora|Merriweather:300,400" rel="stylesheet">
+
+</head>
+<body>
+
+  <!-- PRE LOADER -->
+
+  <div class="preloader">
+    <div class="sk-spinner sk-spinner-wordpress">
+      <span class="sk-inner-circle"></span>
+    </div>
+  </div>
+
+  <!-- Navigation section  -->
+
+  <div class="navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container">
+
+      <div class="navbar-header">
+        <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon icon-bar"></span>
+          <span class="icon icon-bar"></span>
+          <span class="icon icon-bar"></span>
+        </button>
+        <a href="index.html" class="navbar-brand">Iniesta</a>
+      </div>
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="carrer.html">Carrer</a></li>
+          <li><a href="play.html">Performance</a></li>
+          <li class="active"><a href="quiz.html">Quiz</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Home Section -->
+
+  <section id="home" class="main-contact parallax-section">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-12 col-sm-12">
+          <h1>Quiz</h1>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Contact Section -->
+
+  <style>
+  /* * {
+  margin: 0;
+  padding: 0;
+}
+div {
+width: 750px;
+height: 405px;
+background-color: #fbf9eb;
+} */
+img {
+  transform: translate(50px, 50px);
+}
+</style> -->
+<section id="contact">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-offset-1 col-md-10 col-sm-12">
+        <h2>Which is Iniesta?</h2>
+        <p>イニエスタはどれでしょう？</p>
+
+        <form action="#" method="post">
+          <div class="col-md-4 col-sm-4">
+            <img src="images/about-image.png" class="img-responsive" alt="About Image">
+            <div><img id="mitarashi" src="images/about-image1.jpg"></div>
+            <script>
+            // みたらしくんを1秒後に1秒かけて座標(500, 150)へアニメーションさせる
+
+            /**
+            * 対象オブジェクトをアニメーションして移動させます。
+            * @param {string} targetID スクロール時間のミリ秒です。
+            * @param {number} time アニメーションさせる時間です（ミリ秒）。
+            * @param {number} endX X座標の目標値です。
+            * @param {number} endY Y座標の目標値です。
+            * @param {number} delay アニメーションを開始するまでの遅延時間です（ミリ秒）。
+            */
+            function animateTranslate(targetID, time, endX, endY, delay) {
+              const target = document.getElementById('mitarashi'); // アニメーションの対象
+              const style = getComputedStyle(target); // 対象のスタイルを取得
+              const reg = /matrix\((.*)\)/; // 不要な文字列を取り除くための正規表現
+              const transform = style.transform.match(reg)[1].split(','); // transform を配列として取得
+              const startX = parseFloat(transform[4]); // X座標の始点
+              const startY = parseFloat(transform[5]); // Y座標の始点
+              const diffX = endX - startX; // X座標の変化量
+              const diffY = endY - startY; // Y座標の変化量
+              let progress = 0;
+
+              // アップデートを実行する
+              requestAnimationFrame(update);
+              function update(timestanp) {
+                // 遅延時間を含めた進捗率を算出
+                progress = (timestanp - delay) / time;
+                // 進捗率が100%を超えないよう丸める
+                progress = Math.min(progress, 1);
+
+                // 進捗率がプラスの場合のみ値を算出し反映する
+                if (progress >= 0) {
+                  const resultX = startX + diffX * progress; // X座標
+                  const resultY = startY + diffY * progress; // Y座標
+                  target.style.transform = `translate( ${resultX}px, ${resultY}px )`;
+                }
+
+                // 進捗が1未満の場合はアップデートを再実行する
+                if (progress < 1) {
+                  requestAnimationFrame(update);
+                }
+              }
+            }
+
+            </script>
+            <input type="button" value="animation" onclick="animateTranslate('mitarashi', 1000, 500, 150, 1000);">
+            <!-- <div class="block"></div> -->
+          </div>
+          <div class="col-md-4 col-sm-4">
+            <!-- <input name="email" type="email" class="form-control" id="email" placeholder="Email"> -->
+            <img src="images/about-image.png" class="img-responsive" alt="About Image">
+          </div>
+          <div class="col-md-4 col-sm-4">
+            <!-- <input name="subject" type="text" class="form-control" id="subject" placeholder="Subject"> -->
+            <img src="images/about-image.png" class="img-responsive" alt="About Image">
+          </div>
+          <div class="col-md-12 col-sm-12">
+
+            <!-- <textarea name="message" rows="5" class="form-control" id="message" placeholder="Message"></textarea> -->
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <!-- <input name="submit" type="submit" class="form-control" id="submit" value="Send"> -->
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<!-- Back top -->
+<a href="#back-top" class="go-top"><i class="fa fa-angle-up"></i></a>
+
+<!-- SCRIPTS -->
+
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.parallax.js"></script>
+<script src="js/custom.js"></script>
+
+</body>
+</html>
